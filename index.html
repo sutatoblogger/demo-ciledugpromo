@@ -113,6 +113,57 @@
         .grid-icon { width: 18px; height: 18px; margin-right: 8px; }
         
         .faq-lsi { margin-top: 50px; border-top: 1px solid #ddd; padding-top: 20px; font-size: 14px; color: #666; }
+
+        /* BENTO GRID PORTOFOLIO PREMIUM (PURE CSS + ANTI-CLS) */
+        .portfolio-section { margin-top: 60px; margin-bottom: 40px; }
+        .portfolio-section h2 { text-align: center; margin-bottom: 10px; color: #1a5276; }
+        .portfolio-section > p { text-align: center; color: #666; margin-bottom: 30px; }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-auto-rows: 220px;
+            gap: 16px;
+        }
+        
+        /* Elemen pertama dibuat lebih besar di layar laptop (Bento Style) */
+        @media (min-width: 768px) {
+            .bento-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        }
+        
+        .bento-item {
+            position: relative; border-radius: 16px; overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background-color: #e0e0e0; /* Cangkang warna saat gambar loading */
+        }
+        
+        .bento-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(26, 82, 118, 0.2);
+            z-index: 2;
+        }
+        
+        .bento-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .bento-item:hover img { transform: scale(1.08); }
+        
+        /* Efek Hover Kaca Hitam di atas gambar */
+        .bento-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+            padding: 30px 20px 20px; color: #fff;
+            transform: translateY(100%); transition: transform 0.4s ease;
+            display: flex; flex-direction: column; justify-content: flex-end;
+        }
+        
+        .bento-item:hover .bento-overlay { transform: translateY(0); }
+        
+        .bento-overlay h4 { margin: 0 0 5px; font-size: 18px; color: #f1c40f; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+        .bento-overlay p { margin: 0; font-size: 13px; font-weight: 500; opacity: 0.9; }
     </style>
 </head>
 <body>
@@ -192,6 +243,42 @@
                     <p>Balas chat pelanggan 24/7.</p>
                 </div>
                 <div class="addon-price">+ Rp 50 Ribu</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-section">
+        <h2>Bukti Nyata Kualitas Dewa Kami</h2>
+        <p>Arahkan (Hover) kursor ke gambar untuk melihat hasil garapan kami yang super ekstrem.</p>
+        
+        <div class="bento-grid">
+            <div class="bento-item">
+                <img src="portofolio-1.webp" alt="Bukti optimasi SEO di Google Search Console" width="600" height="600" loading="lazy" decoding="async">
+                <div class="bento-overlay">
+                    <h4>Terindeks Hitungan Menit</h4>
+                    <p>Jaringan website otomatis dilaporkan dan masuk ke radar Google.</p>
+                </div>
+            </div>
+            <div class="bento-item">
+                <img src="portofolio-2.webp" alt="Bukti skor kecepatan PageSpeed Desktop 100" width="300" height="300" loading="lazy" decoding="async">
+                <div class="bento-overlay">
+                    <h4>Skor Desktop 100</h4>
+                    <p>Loading cuma 0.4 detik. Mustahil bikin klien Anda bosan menunggu.</p>
+                </div>
+            </div>
+            <div class="bento-item">
+                <img src="portofolio-3.webp" alt="Bukti skor kecepatan PageSpeed Mobile 100" width="300" height="300" loading="lazy" decoding="async">
+                <div class="bento-overlay">
+                    <h4>Skor Mobile 100</h4>
+                    <p>Tampilan HP super mulus, bikin Google makin cinta website Anda.</p>
+                </div>
+            </div>
+            <div class="bento-item">
+                <img src="portofolio-4.webp" alt="Bukti ranking 1 Google CiledugPromo" width="300" height="300" loading="lazy" decoding="async">
+                <div class="bento-overlay">
+                    <h4>Ranking 1 Google</h4>
+                    <p>Dominasi pencarian lokal, siap meraup semua klien di kota Anda.</p>
+                </div>
             </div>
         </div>
     </div>
