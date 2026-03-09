@@ -1,0 +1,51 @@
+<head>
+    <meta name="google-site-verification" content="PASTE_KODE_ANDA_DI_SINI" />
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    ```
+
+Setelah kelima *file* disuntik kode tersebut, *Save* dan *Push* (Deploy) ulang ke Vercel dengan perintah `vercel --prod`. Setelah *live*, kembali ke halaman GSC dan klik tombol **Verifikasi**. SAH! Anda resmi jadi pemilik sah di mata Google.
+
+---
+
+## Bonus Dewa: File Sitemap XML Otomatis
+
+Karena *website* kita adalah HTML murni (tanpa WordPress), kita harus membuat peta jalan alias *Sitemap* secara manual agar robot Google tidak tersesat saat merayapi cabang-cabang kota Anda. 
+
+Buat satu *file* baru di dalam *folder* yang sama dengan *file* HTML Anda, beri nama **`sitemap.xml`**. *Copy-paste* seluruh kode sakti ini ke dalamnya:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://demo-ciledugpromo.vercel.app/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://demo-ciledugpromo.vercel.app/jasa-web-bintaro.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo-ciledugpromo.vercel.app/jasa-web-bsd.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo-ciledugpromo.vercel.app/jasa-web-tangerang-selatan.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo-ciledugpromo.vercel.app/jasa-web-jakarta-barat.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
