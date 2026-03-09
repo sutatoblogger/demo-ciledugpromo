@@ -1,21 +1,3 @@
-<head>
-    <meta name="google-site-verification" content="jXg4IWWebWxb8BX8YB-Q8mCLMW4JAiT-RfkrlUjGhjA" />
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    ```
-
-Setelah kelima *file* disuntik kode tersebut, *Save* dan *Push* (Deploy) ulang ke Vercel dengan perintah `vercel --prod`. Setelah *live*, kembali ke halaman GSC dan klik tombol **Verifikasi**. SAH! Anda resmi jadi pemilik sah di mata Google.
-
----
-
-## Bonus Dewa: File Sitemap XML Otomatis
-
-Karena *website* kita adalah HTML murni (tanpa WordPress), kita harus membuat peta jalan alias *Sitemap* secara manual agar robot Google tidak tersesat saat merayapi cabang-cabang kota Anda. 
-
-Buat satu *file* baru di dalam *folder* yang sama dengan *file* HTML Anda, beri nama **`sitemap.xml`**. *Copy-paste* seluruh kode sakti ini ke dalamnya:
-
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
